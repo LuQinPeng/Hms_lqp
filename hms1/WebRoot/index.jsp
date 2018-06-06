@@ -5,7 +5,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>zz
+<html>
   <head>
     <base href="<%=basePath%>">
     
@@ -18,9 +18,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <script src="text/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/jquery-2.0.0.min.js"></script>
+	   <link rel="stylesheet" href="text/foundation-6.4.2-complete/css/foundation.min.css">
+  <script src="text/foundation-6.4.2-complete/js/vendor/foundation.min.js"></script>
+  <script src="text/foundation-6.4.2-complete/js/vendor/modernizr.js"></script>
+	
   </head>
   
   <body>
-    This is my JSP page. <br>
+  <div style="padding:20px;">
+  <h2>内嵌模态框</h2>
+  <!-- 触发模态框 -->
+  <button type="button" class="button" data-reveal-id="myModal">点击打开模态框</button>
+
+  <!-- 第一个模态框 -->
+  <div id="myModal" class="reveal-modal" data-reveal>
+    <h2>第一个模态框</h2>
+    <p>点击以下按钮会打开一个新的模态框。如果打开新的模态框，那么第一个模态框就会被关闭。</p>
+    <p><a href="#" data-reveal-id="secondModal" class="button success" style="text-decoration:none;">打开第二个模态框</a></p>
+    <a class="close-reveal-modal">&times;</a>
+  </div>
+
+  <!-- 第二个模态框 -->
+  <div id="secondModal" class="reveal-modal" data-reveal data-options="multiple_opened:true;">
+    <h2>第二个模态框</h2>
+    <p>第二个模态框，第一个模态在第二个模态框下面，并没有关闭。</p>
+   
+    <a class="close-reveal-modal">&times;</a>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    $(document).foundation();
+})
+</script>
   </body>
 </html>

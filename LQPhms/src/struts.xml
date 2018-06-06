@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.devMode" value="true" />
+	
+	   <package name="deafult" namespace="/" extends="json-default">
+		<action name="find" class="com.hms.action.lqp.DrugAction" method="find">
+		<result name="success">/ShowTime/index.jsp</result>
+		</action>
+		 <action name="saveOrUpdate" class="com.hms.action.lqp.DrugAction" method="saveOrUpdate">
+		<result name="success">/ShowTime/index.jsp</result>
+		</action>
+		<!--<action name="findById" class="com.hms.action.lqp.DrugAction" method="findById">
+		<result name="success">/ShowTime/index.jsp</result>
+		</action>
+		 <action name="save" class="com.hms.action.lqp.DrugAction" method="save">
+		<result name="success">/index.jsp</result>
+		</action>
+		<action name="update" class="com.hms.action.lqp.DrugAction" method="update">
+		<result name="success">/index.jsp</result>
+		</action> -->
+	</package>
+		
+	   <package name="drugdate" namespace="/" extends="json-default">
+		<action name="select" class="com.hms.action.lqp.DrugDateAction" method="select">
+		<result name="success">/ShowTime/date1.jsp</result>
+		</action>
+		<action name="findFY1" class="com.hms.action.lqp.DrugdateFY" method="findFY1">
+		<result name="success">/ShowTime/date1.jsp</result>
+		</action>
+		</package>
+		
+		<package name="drugrepertory" namespace="/" extends="json-default">
+		<action name="findDrugrepertory" class="com.hms.action.lqp.DrugrepertoryAction" method="findDrugrepertory">
+		<result name="success">/ShowTime/Drugrepertory.jsp</result>
+		</action>
+			<action name="saveTo" class="com.hms.action.lqp.DrugrepertoryAction" method="saveTo">
+		<result name="success">/ShowTime/date.jsp</result>
+		</action>
+		<action name="updateTo" class="com.hms.action.lqp.DrugrepertoryAction" method="updateTo">
+		<result name="success">/ShowTime/date.jsp</result>
+		</action>
+		<action name="saveDrug" class="com.hms.action.lqp.DrugrepertoryAction" method="saveDrug">
+		<result name="success">/ShowTime/date.jsp</result>
+		</action>
+		<action name="updateByunld" class="com.hms.action.lqp.DrugrepertoryAction" method="updateByunld">
+		<result name="success">/ShowTime/date.jsp</result>
+		</action>					
+		</package>
+
+		
+		<package name="pharmacy" namespace="/" extends="struts-default">
+		<action name="finddrug" class="com.hms.action.lqp.PharmacyAction" method="finddrug">
+		<result name="success">/ShowTime/pharmacyFind.jsp</result>
+		</action>
+		<action name="findByunlding" class="com.hms.action.lqp.PharmacyAction" method="findByunlding">
+		<result name="success">/ShowTime/pharmacyFind.jsp</result>
+		</action>		
+		<action name="savepharmary" class="com.hms.action.lqp.PharmacyAction" method="savepharmary">
+		<result name="success">/ShowTime/date1.jsp</result>
+		</action>
+		<action name="saveBydrug" class="com.hms.action.lqp.PharmacyAction" method="saveBydrug">
+		<result name="success">/ShowTime/date1.jsp</result>
+		</action>
+		<action name="findunld" class="com.hms.action.lqp.PharmacyAction" method="findunld">
+		<result name="success">/ShowTime/index.jsp</result>
+		</action>
+		</package>
+		
+		
+		<package name="detail" namespace="/" extends="struts-default">
+			<action name="findAll" class="com.hms.action.lqp.DetailAction" method="findAll">
+		      <result name="success">/ShowTime1/DetailfindAll.jsp</result>
+		    </action>
+		    
+		    <action name="finddrug1" class="com.hms.action.lqp.DetailAction" method="finddrug1">
+		      <result name="success">/ShowTime1/DetailfindAll.jsp</result>
+		    </action>
+		    <action name="savedetail" class="com.hms.action.lqp.DetailAction" method="savedetail">
+		      <result name="success">/ShowTime1/DetailfindAll.jsp</result>
+		    </action>
+		     <action name="findById" class="com.hms.action.lqp.DetailAction" method="findById">
+		      <result name="success">/ShowTime1/DetailfindAll.jsp</result>
+		    </action>
+		    <action name="updateByDetail" class="com.hms.action.lqp.DetailAction" method="updateByDetail">
+		      <result name="success">/ShowTime1/DetailfindAll.jsp</result>
+		    </action>
+		</package>
+		
+</struts>    
+    
